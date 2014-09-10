@@ -1,0 +1,1489 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1265\cocoasubrtf210
+{\fonttbl\f0\froman\fcharset0 Times-Roman;\f1\fswiss\fcharset0 ArialMT;\f2\fnil\fcharset0 Verdana;
+\f3\fnil\fcharset0 Menlo-Regular;\f4\fnil\fcharset0 HelveticaNeue;\f5\fswiss\fcharset0 Helvetica;
+}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red52\green110\blue183;\red38\green38\blue38;
+\red245\green245\blue245;\red0\green0\blue0;\red135\green136\blue117;\red246\green235\blue187;\red234\green234\blue234;
+\red255\green255\blue255;\red17\green137\blue135;\red210\green0\blue53;\red14\green114\blue164;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid1\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid101\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}
+{\list\listtemplateid3\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{disc\}}{\leveltext\leveltemplateid201\'01\uc0\u8226 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid3}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}{\listoverride\listid3\listoverridecount0\ls3}}
+\margl1440\margr1440\vieww20380\viewh12540\viewkind0
+\deftab720
+\pard\pardeftab720
+
+\f0\fs24 \cf0 \
+\pard\pardeftab720\sl760\sa320
+
+\f1\b\fs54 \cf2 Homework #2
+\f0\fs28 \cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\b0\fs32 \cf2 Due Mon, 9/15
+\f0\fs24 \cf0 \
+\pard\pardeftab720\sl260
+\cf0 \
+\pard\pardeftab720\sa120
+\cf0 \
+\pard\pardeftab720\sa240
+\cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\b\fs32 \cf2 0)
+\b0  Create a free {\field{\*\fldinst{HYPERLINK "https://github.com/portlandcodeschool/jse-fall14-2/blob/master/www.getharvest.com"}}{\fldrslt \cf3 Harvest}} account and track your class-related hours this week. If you don't remember to start the timer when you begin working, try to estimate and log your time retroactively. Be descriptive about which activity you're working on (e.g. in class, office hours, doing homework, reading, etc). On next Monday, generate an invoice for the week and turn it in with your homework.
+\f0\fs24 \cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\fs32 \cf2 Remember that you should expect to spend 20 hours per week outside of class. As a general guideline, at least half of that should be spent directly on the homework problems, and another quarter should be background reading and studying.
+\f0\fs24 \cf0 \
+
+\f1\fs32 \cf2 Each problem below lists, along with its projected difficulty level, an approximate time budget. The total time estimate for this homework is around 10 hours.
+\f0\fs24 \cf0 \
+\pard\pardeftab720\sl260
+\cf0 \
+\pard\pardeftab720\sa120
+\cf0 \
+\pard\pardeftab720\sa240
+\cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\b\fs32 \cf2 1)
+\b0  
+\i (Easy, 1/2 hr)
+\f0\i0\fs24 \cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\fs32 \cf2 Revisit your solution to homework #1, problem 4, which expresses an improper fraction as a proper one, and turn your solution into a function.
+\f0\fs24 \cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\b\fs32 \cf2 a)
+\b0  Write a function 
+\f2\fs30 printFraction(n,d)
+\f1\fs32  which takes 2 parameters (n,d) and returns a string. For example, 
+\f2\fs30 printFraction(7,4)
+\f1\fs32  should return "1 3/4". Assume that 
+\i n
+\i0  and 
+\i d
+\i0  are both positive integers.\
+Original Solution:\
+\pard\pardeftab720
+
+\f3\fs24 \cf0 var n = 7;\
+var d = 4;\
+var wholeNumber = 0;\
+var properNumerator = n%d;\
+var numeratorCounter = n;\
+while (numeratorCounter>d) \{\
+  numeratorCounter = numeratorCounter-d\
+  ++wholeNumber\
+\}\
+var mixedFraction = wholeNumber + " " + properNumerator + "/" + d;
+\f4\fs32 \cf4 \
+\pard\pardeftab720\sl500\sa320
+
+\f1 \cf0 \
+Rewritten as a function:\
+function printFraction(n,d) \{\
+\pard\pardeftab720
+\cf0   var n = 7;\
+  var d = 4;\
+  var wholeNumber = 0;\
+  var properNumerator = n%d;\
+  var numeratorCounter = n;\
+  while (numeratorCounter>d) \{\
+    numeratorCounter = numeratorCounter-d\
+    ++wholeNumber\
+   \}\
+var mixedFraction = wholeNumber + " " + properNumerator + "/" + d;\
+return mixedFraction;\
+\pard\pardeftab720\sl500\sa320
+\cf0 \}
+\f0\fs24 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\b\fs32 \cf2 b)
+\b0  Write a second version of your function which improves the output in two special cases:
+\f0\fs24 \cf0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl500\sa320
+\ls1\ilvl0
+\f1\fs32 \cf2 {\listtext	\'95	}A output string like "0 1/2" should be simplified to just "1/2";\
+{\listtext	\'95	}A output string like "1 0/3" should be simplified to just "1".\
+\pard\pardeftab720\sl500\sa320
+\cf0 function printFraction(n,d) \{\
+\pard\pardeftab720
+\cf0   var n = 7;\
+  var d = 4;\
+  var wholeNumber = 0;\
+  var properNumerator = n%d;\
+  var numeratorCounter = n;\
+  while (numeratorCounter>d) \{\
+    numeratorCounter = numeratorCounter-d\
+    ++wholeNumber\
+   \}\
+var mixedFraction = wholeNumber + " " + properNumerator + "/" + d;\
+return mixedFraction;\
+\pard\pardeftab720\sl500\sa320
+\cf0 \}
+\f0\fs24 \
+\pard\pardeftab720\sl260
+\cf0 \
+\pard\pardeftab720\sa120
+\cf0 \
+\pard\pardeftab720\sa240
+\cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\b\fs32 \cf2 2)
+\b0  
+\i (Easyish, 2 hrs)
+\f0\i0\fs24 \cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\fs32 \cf2 Rewrite each block below as the simplest equivalent you can discover. Your equivalent should produce the same final conditions as the original code given the same initial conditions.
+\f0\fs24 \cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\b\fs32 \cf2 a)
+\f0\b0\fs24 \cf0 \
+\pard\pardeftab720\sl420\sa320
+
+\f2\fs30 \cf2 \cb5 var i;\uc0\u8232 if ((n - Math.floor(n)) >= .5) \{\u8232  \'a0\'a0i = Math.ceil(n);\u8232 \} else \{\u8232  \'a0i = Math.floor(n);\u8232 \}
+\f0\fs24 \cf0 \cb1 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\b\fs32 \cf2 b)
+\f0\b0\fs24 \cf0 \
+\pard\pardeftab720\sl420\sa320
+
+\f2\fs30 \cf2 \cb5 var y, xIsFalse = (x? false : true);\uc0\u8232 if (xIsFalse)\u8232  \'a0\'a0y = false;\u8232 else\u8232  \'a0\'a0y = x;
+\f0\fs24 \cf0 \cb1 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\b\fs32 \cf2 c)
+\f0\b0\fs24 \cf0 \
+\pard\pardeftab720\sl420\sa320
+
+\f2\fs30 \cf2 \cb5 for (var count = 15 - i ; count < 15 ; count=count+1) \{\uc0\u8232  \'a0\'a0\'a0i = i-1;\u8232  \'a0\'a0\'a0console.log(i+1)\u8232 \}
+\f0\fs24 \cf0 \cb1 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\b\fs32 \cf2 d)
+\f0\b0\fs24 \cf0 \
+\pard\pardeftab720\sl420\sa320
+
+\f2\fs30 \cf2 \cb5 var x;\uc0\u8232 if (a) \{\u8232  \'a0\'a0if (b) \{\u8232  \'a0\'a0\'a0\'a0x = 0;\u8232  \'a0\'a0\} else \{\u8232  \'a0\'a0\'a0\'a0x = 1;\u8232  \'a0\'a0\}\u8232 \} else \{\u8232  \'a0if (b) \{\u8232  \'a0\'a0\'a0x = 1;\u8232  \'a0\} else \{\u8232  \'a0\'a0\'a0x = 2;\u8232  \'a0\}\u8232 \}
+\f0\fs24 \cf0 \cb1 \
+\pard\pardeftab720\sl260
+\cf0 \
+\pard\pardeftab720\sa120
+\cf0 \
+\pard\pardeftab720\sa240
+\cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\b\fs32 \cf2 3)
+\b0  
+\i (Moderate, 2 hrs)
+\f0\i0\fs24 \cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\fs32 \cf2 Write a program which generates a string containing the entire lyrics for the song "The Twelve Days of Christmas". Make sure that your result is grammatically and typographically correct (include line breaks, commas, etc. where needed), but keep redundancy within your program to a minimum. You may want to use functions, loops, and/or arrays to store repeated elements. (Tip: within any string, '\\n' creates a line break.)
+\f0\fs24 \cf0 \
+
+\f1\fs32 \cf2 If you prefer a non-Christmas option, you may choose a different song with similarly repeating structure, such as "There was an Old Woman Who Swallowed a Fly".
+\f0\fs24 \cf0 \
+\pard\pardeftab720\sl260
+\cf0 \
+\pard\pardeftab720\sa120
+\cf0 \
+\pard\pardeftab720\sa240
+\cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\b\fs32 \cf2 4)
+\b0  
+\i (Difficult, 2.5 hrs)
+\f0\i0\fs24 \cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\fs32 \cf2 Suppose the '&' key on your keyboard is missing, and you want to be able to continue programming without it.
+\f0\fs24 \cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\b\fs32 \cf2 a)
+\b0  Write a function 
+\f2\fs30 and2(a,b)
+\f1\fs32  which tries to simulate the && operator: it should always return the same result as 
+\f2\fs30 (a && b)
+\f1\fs32  for any values of 
+\i a
+\i0  and 
+\i b
+\i0 . (For example, 
+\f2\fs30 and2((0>1),true)
+\f1\fs32  should return 
+\i false
+\i0 .) But you can't use && itself within your function!
+\f0\fs24 \cf0 \
+
+\f1\b\fs32 \cf2 b)
+\b0  Write another function 
+\f2\fs30 and3(a,b,c)
+\f1\fs32  which tries to simulate a double-&& operator: it should always return the same result as 
+\f2\fs30 (a && b && c)
+\f1\fs32  for any values of a,b,c. (For example, 
+\f2\fs30 and3((1>0),(0>1),true)
+\f1\fs32  should return 
+\i false
+\i0 .) As before, you're not allowed to use && itself.
+\f0\fs24 \cf0 \
+
+\f1\b\fs32 \cf2 c)
+\b0  Now generalize your function to handle any number of values. You will learn better ways eventually, but for now use an array to store all the values. Your new function 
+\f2\fs30 andN(n,values)
+\f1\fs32  should accept two parameters: 
+\f2\fs30 n
+\f1\fs32  is the length of the array 
+\f2\fs30 values
+\f1\fs32 . Assume the array holds at least 
+\f2\fs30 n
+\f1\fs32  values. If your array argument holds values [a,b,c...z], as in 
+\f2\fs30 andN(26,[a,b,c...z])
+\f1\fs32 , the function should return the same result as 
+\f2\fs30 (a && b && c && ... z)
+\f1\fs32 . Make sure to handle two special cases: length 0 (then return 
+\i true
+\i0 ) and length 1 (then return that single value). Again, don't use &&.
+\f0\fs24 \cf0 \
+
+\f1\b\fs32 \cf2 d)
+\b0  You've just realized that your effort was doomed: neither of your functions can replace the && operator in certain circumstances. Explain why, and find an example which demonstrates failure.
+\f0\fs24 \cf0 \
+\pard\pardeftab720\sl260
+\cf0 \
+\pard\pardeftab720\sa120
+\cf0 \
+\pard\pardeftab720\sa240
+\cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\b\fs32 \cf2 5)
+\b0  
+\i (Moderate, 3 hrs)
+\f0\i0\fs24 \cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\fs32 \cf2 Imagine that a deck of playing cards is sorted by rank and suit: first all the Aces, then the Twos, etc, with the Kings last. Within each rank, the suits are in the order Hearts, Diamonds, Spades, Clubs. Number each card in order from 0 to 51 (i.e. 0=Ace of Hearts; 51=King of Clubs), and let that ID number represent the corresponding card. Use that encoding scheme for each part below.
+\f0\fs24 \cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\b\fs32 \cf2 a)
+\b0  Write five related functions to compute different aspects of a card:
+\f0\fs24 \cf0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl480\sa640
+\ls2\ilvl0
+\f2\fs30 \cf2 {\listtext	\'95	}rank(id)
+\f1\fs32  returns 1-13, representing the card's rank (for an 
+\i id
+\i0  between 0-51).\
+\ls2\ilvl0
+\f2\fs30 {\listtext	\'95	}suit(id)
+\f1\fs32  returns 1-4, representing the card's suit (1 is Hearts, 4 is Clubs).\
+\ls2\ilvl0
+\f2\fs30 {\listtext	\'95	}color(id)
+\f1\fs32  returns "red" or "black".\
+\ls2\ilvl0
+\f2\fs30 {\listtext	\'95	}name(id)
+\f1\fs32  returns the full name of the card (e.g. "Four of Diamonds").\
+\ls2\ilvl0
+\f2\fs30 {\listtext	\'95	}cardID(rank,suit)
+\f1\fs32  returns 0-51, identifying the card id of a given rank and suit.\
+\pard\pardeftab720\sl500\sa320
+\cf2 Assume each function is given valid arguments (i.e. the args are integers in the appropriate range). Your functions may call each other-- for example: 
+\i color
+\i0  could be derived from 
+\i suit
+\i0 . Try to reuse functions to avoid duplicating code.
+\f0\fs24 \cf0 \
+
+\f1\fs32 \cf2 Hint #1: Notice the patterns as the card id ranges from 0 to 51:
+\f0\fs24 \cf0 \
+\pard\tx220\tx720\pardeftab720\li720\fi-720\sl500\sa320
+\ls3\ilvl0
+\f1\fs32 \cf2 {\listtext	\'95	}rank(id) increases slowly, like a quotient;\
+{\listtext	\'95	}suit(id) cycles quickly through 1-4, (almost) like a remainder;\
+{\listtext	\'95	}color(id) alternates R,B,R,B...\
+\pard\pardeftab720\sl500\sa320
+\cf2 Hint #2: Generate your card names by combining a rank word from one array and suit word from another.
+\f0\fs24 \cf0 \
+
+\f1\fs32 \cf2 Write your code into the {\field{\*\fldinst{HYPERLINK "https://github.com/portlandcodeschool/jse-fall14-2/blob/master/cards-template1a.js"}}{\fldrslt \cf3 template file}}. The template also includes a suite of assertions for testing your code. When you evaluate the entire template file, the assertions at the end will write messages to the console if your functions fail any test. Make sure you pass all the tests!
+\f0\fs24 \cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\b\fs32 \cf2 b)
+\b0  Now abandon the assumption of valid arguments and program defensively! Rewrite your five functions so that each returns the correct answer when all arguments are valid, but returns NaN if any argument is not an integer in the appropriate range.
+\f0\fs24 \cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\fs32 \cf2 You may use the provided {\field{\*\fldinst{HYPERLINK "https://github.com/portlandcodeschool/jse-fall14-2/blob/master/cards-template1b.js"}}{\fldrslt \cf3 template file}}, which has extra tests checking the results of invalid arguments.
+\f0\fs24 \cf0 \
+
+\f1\fs32 \cf2 Hint #3: you can test whether an number 
+\i n
+\i0  is an integer with 
+\f2\fs30 (n%1 === 0)
+\f1\fs32 .
+\f0\fs24 \cf0 \
+\pard\pardeftab720\sl500\sa320
+
+\f1\b\fs32 \cf2 c)
+\b0  In the file with your solution to part 
+\b b
+\b0 , extend the existing test suite: write 3 new assertions to test success cases and 3 more assertions to test failure cases.
+\f0\fs24 \cf0 \
+\pard\pardeftab720\sl500
+
+\f1\i\fs32 \cf2 (Please note: Problem 5 is the most important one in this homework, because variations of it will recur in several later homeworks. The cleaner your code is now, the easier it will be to modify later.)
+\f0\i0\fs24 \cf0 \
+\pard\pardeftab720\sl340
+
+\f1\fs30 \cf0 ----------------
+\f0\fs24 \
+
+\f1\fs30 Cards Template 1a
+\f0\fs24 \
+
+\f1\fs30 -----------------
+\f0\fs24 \
+\pard\pardeftab720
+\cf0 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4940\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt140 \clpadl140 \clpadb140 \clpadr140 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6980\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt140 \clpadl140 \clpadb140 \clpadr140 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clcbpat8 \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6980\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt140 \clpadl140 \clpadb140 \clpadr140 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl320
+
+\f2\i \cf7 \cb8 // Simple version (no error-detection)
+\f0\i0 \cf0 \cb1 \cell 
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2\i \cf7 \cb10 // function()--> possible return values
+\f0\i0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2\b \cf2 \cb10 function
+\b0  rank(card) \{ 
+\i \cf7 // --> 1..13
+\f0\i0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 \}
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2\b \cf2 \cb10 function
+\b0  suit(card) \{ 
+\i \cf7 // --> 1..4
+\f0\i0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 \}
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2\b \cf2 \cb10 function
+\b0  cardID(rank,suit) \{ 
+\i \cf7 // --> 0..51
+\f0\i0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 \}
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2\b \cf2 \cb10 function
+\b0  color(card) \{ 
+\i \cf7 // -->"red","black"
+\f0\i0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 \}
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2\b \cf2 \cb10 function
+\b0  name(card) \{ 
+\i \cf7 // --> string
+\f0\i0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 \}
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2\i \cf7 \cb10 // TESTING:
+\f0\i0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2\b \cf2 \cb10 function
+\b0  assert(claim,message) \{
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10  \'a0\'a0
+\b if
+\b0  (
+\b !
+\b0 claim) console.error(message);
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 \}
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(rank(\cf11 0\cf2 )
+\b ===
+\b0 \cf11 1\cf2 , \'a0\cf12 "Test 1 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(rank(\cf11 3\cf2 )
+\b ===
+\b0 \cf11 1\cf2 , \'a0\cf12 "Test 2 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(rank(\cf11 51\cf2 )
+\b ===
+\b0 \cf11 13\cf2 ,\cf12 "Test 3 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(suit(\cf11 0\cf2 )
+\b ===
+\b0 \cf11 1\cf2 , \'a0\cf12 "Test 4 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(suit(\cf11 5\cf2 )
+\b ===
+\b0 \cf11 2\cf2 , \'a0\cf12 "Test 5 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(suit(\cf11 51\cf2 )
+\b ===
+\b0 \cf11 4\cf2 , \cf12 "Test 6 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(cardID(\cf11 1\cf2 ,\cf11 1\cf2 )
+\b ===
+\b0 \cf11 0\cf2 , \'a0\'a0\'a0\cf12 "Test 7 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(cardID(\cf11 13\cf2 ,\cf11 4\cf2 )
+\b ===
+\b0 \cf11 51\cf2 , \'a0\cf12 "Test 8 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(cardID(\cf11 8\cf2 ,\cf11 3\cf2 )
+\b ===
+\b0 \cf11 30\cf2 , \'a0\'a0\cf12 "Test 9 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(color(\cf11 0\cf2 )
+\b ===
+\b0 \cf12 'red'\cf2 , \'a0\'a0\cf12 "Test 10 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(color(\cf11 2\cf2 )
+\b ===
+\b0 \cf12 'black'\cf2 , \cf12 "Test 11 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(name(\cf11 5\cf2 )
+\b ===
+\b0 \cf12 'Two of Diamonds'\cf2 , \cf12 "Test 12 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6800\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(name(\cf11 51\cf2 )
+\b ===
+\b0 \cf12 'King of Clubs'\cf2 , \'a0\cf12 "Test 13 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth4780\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth6960\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt140 \clpadl140 \clpadb140 \clpadr140 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell \lastrow\row
+\pard\pardeftab720
+\cf0 \
+\pard\pardeftab720\sl340
+
+\f1\fs30 \cf0 ----------------
+\f0\fs24 \
+
+\f1\fs30 Cards Template 1b
+\f0\fs24 \
+
+\f1\fs30 -----------------
+\f0\fs24 \
+\pard\pardeftab720
+\cf0 \
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8540\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadt140 \clpadl140 \clpadb140 \clpadr140 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl320
+
+\f2\i \cf7 \cb10 // Error-detecting version
+\f0\i0 \cf0 \cb1 \cell 
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2\b \cf2 \cb10 function
+\b0  rank(card) \{
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 \}
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2\b \cf2 \cb10 function
+\b0  suit(card) \{
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 \}
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2\b \cf2 \cb10 function
+\b0  cardID(rank,suit) \{
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 \}
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2\b \cf2 \cb10 function
+\b0  color(card) \{
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 \}
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2\b \cf2 \cb10 function
+\b0  name(card) \{
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 \}
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2\i \cf7 \cb10 // TESTING:
+\f0\i0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2\b \cf2 \cb10 function
+\b0  assert(claim,message) \{
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10  \'a0\'a0
+\b if
+\b0  (
+\b !
+\b0 claim) console.error(message);
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 \}
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(rank(\cf11 0\cf2 )
+\b ===
+\b0 \cf11 1\cf2 , \'a0\cf12 "Test 1 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(rank(\cf11 3\cf2 )
+\b ===
+\b0 \cf11 1\cf2 , \'a0\cf12 "Test 2 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(rank(\cf11 51\cf2 )
+\b ===
+\b0 \cf11 13\cf2 ,\cf12 "Test 3 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(suit(\cf11 0\cf2 )
+\b ===
+\b0 \cf11 1\cf2 , \'a0\cf12 "Test 4 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(suit(\cf11 5\cf2 )
+\b ===
+\b0 \cf11 2\cf2 , \'a0\cf12 "Test 5 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(suit(\cf11 51\cf2 )
+\b ===
+\b0 \cf11 4\cf2 , \cf12 "Test 6 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(cardID(\cf11 1\cf2 ,\cf11 1\cf2 )
+\b ===
+\b0 \cf11 0\cf2 , \'a0\'a0\'a0\cf12 "Test 7 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(cardID(\cf11 13\cf2 ,\cf11 4\cf2 )
+\b ===
+\b0 \cf11 51\cf2 , \'a0\cf12 "Test 8 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(cardID(\cf11 8\cf2 ,\cf11 3\cf2 )
+\b ===
+\b0 \cf11 30\cf2 , \'a0\'a0\cf12 "Test 9 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(color(\cf11 0\cf2 )
+\b ===
+\b0 \cf12 'red'\cf2 , \'a0\'a0\cf12 "Test 10 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(color(\cf11 2\cf2 )
+\b ===
+\b0 \cf12 'black'\cf2 , \cf12 "Test 11 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(name(\cf11 5\cf2 )
+\b ===
+\b0 \cf12 'Two of Diamonds'\cf2 , \cf12 "Test 12 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(name(\cf11 51\cf2 )
+\b ===
+\b0 \cf12 'King of Clubs'\cf2 , \'a0\cf12 "Test 13 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2\i \cf7 \cb10 // Extra testing!
+\f0\i0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2\i \cf7 \cb10 // These tests check that invalid arguments produce invalid output.
+\f0\i0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (rank(\cf11 52\cf2 )), \'a0\cf12 "Test 21 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (rank(\cf12 "0"\cf2 )), \cf12 "Test 22 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (rank(
+\b -
+\b0 \cf11 1\cf2 )), \'a0\cf12 "Test 23 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (rank(\cf11 2.5\cf2 )), \cf12 "Test 24 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (rank(
+\b undefined
+\b0 )),\cf12 "Test 25 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (suit(\cf11 52\cf2 )), \'a0\'a0\cf12 "Test 26 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (suit(
+\b false
+\b0 )),\cf12 "Test 27 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (suit(
+\b true
+\b0 )), \cf12 "Test 28 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (suit(
+\b -
+\b0 \cf11 1\cf2 )), \'a0\'a0\cf12 "Test 29 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (suit(\cf11 3.14\cf2 )), \cf12 "Test 30 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (cardID(\cf11 0\cf2 ,\cf11 1\cf2 )), \'a0\'a0\cf12 "Test 31 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (cardID(\cf12 "1"\cf2 ,\cf11 1\cf2 )), \cf12 "Test 32 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (cardID(\cf11 1\cf2 ,\cf11 5\cf2 )), \'a0\'a0\cf12 "Test 33 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (cardID(\cf11 14\cf2 ,\cf11 1\cf2 )), \'a0\cf12 "Test 34 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (cardID(
+\b -
+\b0 \cf11 1\cf2 ,
+\b -
+\b0 \cf11 1\cf2 )), \cf12 "Test 35 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (cardID(\cf11 0.5\cf2 ,\cf11 1\cf2 )), \cf12 "Test 36 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (cardID(\cf11 1\cf2 ,
+\b NaN
+\b0 )), \cf12 "Test 37 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+\cf0 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (color(\cf12 'apple'\cf2 )),\cf12 "Test 41 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (color(
+\b true
+\b0 )), \'a0\'a0\cf12 "Test 42 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (name(
+\b false
+\b0 )), \'a0\'a0\cf12 "Test 43 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (name(
+\b -
+\b0 \cf11 1\cf2 )), \'a0\'a0\'a0\'a0\'a0\cf12 "Test 44 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (name(\cf11 52\cf2 )), \'a0\'a0\'a0\'a0\'a0\cf12 "Test 45 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \row
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth3220\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrs\brdrw20\brdrcf9 \clpadl220 \clpadr220 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth8360\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrs\brdrw20\brdrcf9 \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl220 \clpadr220 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720
+\cf0 \cell 
+\pard\intbl\itap1\pardeftab720\sl360\qr
+
+\f2 \cf2 \cb10 assert(\cf13 isNaN\cf2 (name(
+\b NaN
+\b0 )), \'a0\'a0\'a0\'a0\cf12 "Test 46 failed"\cf2 );
+\f0 \cf0 \cb1 \cell \lastrow\row
+\pard\pardeftab720
+\cf0 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural
+
+\f5 \cf0 \
+\
+}
