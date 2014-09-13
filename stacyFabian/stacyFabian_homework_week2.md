@@ -29,9 +29,9 @@ _Answer_
 
 var remainder = n % d
 
-var evenlyDivisible = d - remainder
+var evenDivisi = d - remainder
 
-var wholeNumber = evenlyDivisible/
+var wholeNum = evenDivis / d
 
 function printFunction(n,d) {
 	
@@ -109,6 +109,44 @@ You may want to use functions, loops, and/or arrays to store repeated elements.
 (Tip: within any string, '\n' creates a line break.)
 
 If you prefer a non-Christmas option, you may choose a different song with similarly repeating structure, such as "There was an Old Woman Who Swallowed a Fly".
+
+---
+Answer:
+
+var daysofChristmas = ["first",
+       "second",
+       "third",
+       "fourth",
+       "fifth",
+       "sixth",
+       "seventh",
+       "eight",
+       "ninth",
+       "tenth",
+       "eleventh",
+       "twelfth"]
+
+var giftsFromMyLove = ["A Partridge in a Pear Tree.\n\n",
+      "Two Turtle Doves'\n'and",
+      "Three French Hens'\n'",
+      "Four Calling Birds'\n'",
+      "Fiiiiiiiiive Goollllllldeeeeen Riiiiiiinnnnngs\n",
+      "Six Geese a Laying\n",
+      "Seven Swans a Swimming'\n'",
+      "Eight Maids a Milking'\n'",
+      "Nine Ladies Dancing\n",
+      "Ten Lords a Leaping",
+      "Eleven Pipers Piping\n",
+      "Twelve Drummers Druming\n"]
+
+function singCarol() {
+  for (day=0; day<daysofChristmas.length; day++) {
+    console.log("On the "+daysofChristmas[day]+" day of Christmas\nMy true love gave to me:") 
+    for (gift=0; gift<=day; gift++) {
+      console.log(giftsFromMyLove[gift])
+    } 
+  }
+}
 
 ---
 
