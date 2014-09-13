@@ -2,46 +2,60 @@
 
 // function()--> possible return values
 
-function rank(card) { // --> 1..13
-	if (card="A")
-		var cardRank = 1;
-	else if (card=1)
-		cardRank = 2;
-	else if (card=2)
-		cardRank = 3;
-	else if (card=3)
-		cardRank = 4;
-	else if (card=4)
-		cardRank = 5;
+var cardRankName["Ace",
+			 "One",
+			 "Two",
+			 "Three",
+			 "Four",
+			 "Five",
+			 "Six",
+			 "Seven",
+			 "Eight",
+			 "Nine",
+			 "Ten",
+			 "Jack",
+			 "Queen",
+			 "King"]
 
+function rank(card) { // --> 1..13
+	// if ((card+4) % 4 = 0)
+	// 	var cardRank = 1;
+	// else if (card=1)
+	// 	cardRank = 2;
+	// else if (card=2)
+	// 	cardRank = 3;
+	// else if (card=3)
+	// 	cardRank = 4;
+	// else if (card=4)
+	// 	cardRank = 5;
 }
 
 function suit(card) { // --> 1..4
-	if (card="hearts")
-		var cardSuit=1;
-	else if (card="diamonds")
-		var cardSuit=2;
-	else if (card="spades")
-		var cardSuit=3;
-	else if (card="clubs")
-		var cardSuit=4;
+	if ((card + 4) % 4 = 0)
+		var cardSuit = 1;
+	else if ((card + 4) % 4 = 1)
+		var cardSuit = 2;
+	else if ((card + 4) % 4 = 2)
+		var cardSuit = 3;
+	else if ((card + 4) % 4 = 3)
+		var cardSuit = 4;
 }
 
 function cardID(rank,suit) { // --> 0..51
+	// 
 }
 
 function color(card) { // -->"red","black"
-if (suit=1)
-	console.log("red");
-else if (suit=2)
-	console.log("black");
-else if (suit=3)
-	console.log("red");
-else if (suit=4)
-	console.log("black");
+if (cardSuit = 1 || 2)
+	var cardColor = "red";
+else if (cardSuit = 3 || 4)
+	var cardColor = "black";
 }
 
 function name(card) { // --> string
+	for (card=0; card<=52; card++) {
+		cardRankName+" of "+cardSuit
+	}
 }
 
 
