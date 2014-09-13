@@ -24,6 +24,27 @@ Revisit your solution to homework #1, problem 4, which expresses an improper fra
 `printFraction(7,4)` should return "1 3/4".  Assume that _n_ and _d_ are both positive integers.
 
 
+
+
+
+
+	var n = 20,
+        d = 6;
+    
+    
+    var wholeNumber = n / d;
+    wholeNumber = Math.floor(wholeNumber);
+    
+    var remainder = n % d;
+    
+    var result = wholeNumber + ' ' + remainder + '/' + d;
+    
+    console.log(result);
+
+
+
+
+
 **b)** Write a second version of your function which improves the output in two special cases:
 
 - A output string like "0 1/2" should be simplified to just "1/2";
