@@ -185,3 +185,6 @@ In the file with your solution to part **b**, extend the existing test suite: wr
 _(Please note: Problem 5 is the most important one in this homework, because variations of it will recur in several later homeworks.  The cleaner your code is now, the easier it will be to modify later.)_
 
 
+mod and arrays 
++ -
+
