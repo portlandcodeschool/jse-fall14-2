@@ -11,7 +11,7 @@ function suit(card) { // --> 1..4
 }
 
 function color(card) { // -->"red","black" ()
-    if (2 % suit(card) === 0) {
+    if (suit(card) < 2) {
 		return "red";
 	} else {
 		return "black";
@@ -20,10 +20,9 @@ function color(card) { // -->"red","black" ()
 
 function name(card) { // --> string
 	var faces = ["Ace", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King"];
-	var suits = ["Hearts", "Spades", "Diamonds","Clubs"];
+	var suits = ["Hearts", "Diamonds", "Spades", "Clubs"];
 	var cardFace = rank(card) - 1;
 	var cardSuit = suit(card) - 1;
-
 	return faces[cardFace] + " of " + suits[cardSuit];
 
 }
@@ -70,56 +69,56 @@ printDeck();
 
 /*
 0 = Ace of Hearts
-1 = Ace of Spades
-2 = Ace of Diamonds
+1 = Ace of Diamonds
+2 = Ace of Spades
 3 = Ace of Clubs
 4 = Two of Hearts
-5 = Two of Spades
-6 = Two of Diamonds
+5 = Two of Diamonds
+6 = Two of Spades
 7 = Two of Clubs
 8 = Three of Hearts
-9 = Three of Spades
-10 = Three of Diamonds
+9 = Three of Diamonds
+10 = Three of Spades
 11 = Three of Clubs
 12 = Four of Hearts
-13 = Four of Spades
-14 = Four of Diamonds
+13 = Four of Diamonds
+14 = Four of Spades
 15 = Four of Clubs
 16 = Five of Hearts
-17 = Five of Spades
-18 = Five of Diamonds
+17 = Five of Diamonds
+18 = Five of Spades
 19 = Five of Clubs
 20 = Six of Hearts
-21 = Six of Spades
-22 = Six of Diamonds
+21 = Six of Diamonds
+22 = Six of Spades
 23 = Six of Clubs
 24 = Seven of Hearts
-25 = Seven of Spades
-26 = Seven of Diamonds
+25 = Seven of Diamonds
+26 = Seven of Spades
 27 = Seven of Clubs
 28 = Eight of Hearts
-29 = Eight of Spades
-30 = Eight of Diamonds
+29 = Eight of Diamonds
+30 = Eight of Spades
 31 = Eight of Clubs
 32 = Nine of Hearts
-33 = Nine of Spades
-34 = Nine of Diamonds
+33 = Nine of Diamonds
+34 = Nine of Spades
 35 = Nine of Clubs
 36 = Ten of Hearts
-37 = Ten of Spades
-38 = Ten of Diamonds
+37 = Ten of Diamonds
+38 = Ten of Spades
 39 = Ten of Clubs
 40 = Jack of Hearts
-41 = Jack of Spades
-42 = Jack of Diamonds
+41 = Jack of Diamonds
+42 = Jack of Spades
 43 = Jack of Clubs
 44 = Queen of Hearts
-45 = Queen of Spades
-46 = Queen of Diamonds
+45 = Queen of Diamonds
+46 = Queen of Spades
 47 = Queen of Clubs
 48 = King of Hearts
-49 = King of Spades
-50 = King of Diamonds
+49 = King of Diamonds
+50 = King of Spades
 51 = King of Clubs
 
 */

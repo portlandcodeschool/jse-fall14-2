@@ -12,7 +12,7 @@ function suit(card) {
 
 function color(card) { 
     if (card < 0 || card > 51 || typeof card !== "number" || card % 1 !== 0) {return NaN};
-    if (2 % suit(card) === 0) {
+    if (suit(card) < 2) {
 		return "red";
 	} else {
 		return "black";
@@ -89,13 +89,13 @@ assert(isNaN(name(NaN)),     "Test 46 failed");
 // EXERCISE 5C
 // My assertion tests
 
-assert(cardID(12,2)===45, "Test failed");
-assert(color(50)==='black', "Test failed");
-assert(name(35)==='Nine of Clubs', "Test failed");
+assert(cardID(12,2)===45, "Test 47 failed");
+assert(color(50)==='red', "Test 48 failed");
+assert(name(35)==='Nine of Clubs', "Test 49 failed");
 
-assert(isNaN(cardID(15,3)), "Test failed");
-assert(isNaN(color(4)), "Test failed");
-assert(isNaN(name(-2)), "Test failed");
+assert(isNaN(cardID("Jack", "Clubs")), "Test 50 failed");
+assert(isNaN(color(4)), "Test 51 failed");
+assert(isNaN(name(-2)), "Test 52 failed");
 
 
 
