@@ -1,53 +1,86 @@
 // Error-detecting version
 
+var rankName = [" ",
+				"Ace",
+				"Two",
+				"Three",
+				"Four",
+				"Five",
+				"Six",
+				"Seven",
+				"Eight",
+				"Nine",
+				"Ten",
+				"Jack",
+				"Queen",
+				"King"];
+
+var suitName = [" ",
+				"Hearts",
+		 		"Diamonds",
+		 		"Spades",
+				"Clubs"];
+
 function rank(card) {
-	cardRank = Math.floor((card / 4) +1);
-	return cardRank
+	var cardRank // require rank output to be a whole, positive number
+	if (card >= 0 && card < 52) {
+		cardRank = Math.floor((card / 4) +1);;
+	}
+	else {
+		cardSuit = NaN;
+	}
+	return cardRank;
 }
 
 function suit(card) {
-	if (card >= 0 && <= 51){
+	var cardSuit // specifiy the only answers possible are 0 - 5 whole positive numbers
+	// and any string or boolean is NaN result
+	if (card >= 0 && card < 52) {
+		cardSuit = 1 + (card %4);
 	}
-	// insert full function from other doc
 	else {
-		alert("Enter valid value dork!")
+		cardSuit = NaN;
 	}
+	return cardSuit;
 }
 
 function cardID(rank,suit) {
-	var cardID = 4 * (rank - 1) + (suit - 1);
-	return cardID
+	var cardID 
+	// Need to set a parameter that must "rank" and "suit" must be whole, positive numbers >=0 and >52.
+	if (rank,suit >= 0 && rank,suit < 52) {
+		cardID = 4 * (rank - 1) + (suit - 1);
+	}
+	else {
+		alert("Please enter a valid value");
+	}
+	return cardID;
 }
 
 function color(card) {
 	var cardSuit = suit(card);
-	if (cardSuit < 3) {
+	if (card>= 0 && card < 52) {
+		if (cardSuit < 3) {
 		var cardColor = "red"; 
+		}
+		else {
+			cardColor = "black";
+		}
+		return cardColor;
 	}
-	else {
-		cardColor = "black";
-	}
-	return cardColor;
 }
 
 function name(card) {
 	var cardRank = rank(card);
 	var cardSuit = suit(card);
 	var cardName;
-	if (card>=0 && card<52 {
+	if (card >= 0 && card < 52) { 
 		cardName = rankName[cardRank]+" of "+suitName[cardSuit]
 	}
-	else alert("Please input a correct value.")
+	else {
+		cardName = NaN
 	}
-return rankName[cardRank]+" of "+suitName[cardSuit]
+	return rankName[cardRank]+" of "+suitName[cardSuit];
 }
-
-function name(card) {
-		var cardRank = rank(card);
-		var cardSuit = suit(card);
-		return rankName[cardRank]+" of "+suitName[cardSuit]
-}
-
 
 
 // TESTING:
@@ -97,4 +130,6 @@ assert(isNaN(name(false)),   "Test 43 failed");
 assert(isNaN(name(-1)),      "Test 44 failed");
 assert(isNaN(name(52)),      "Test 45 failed");
 assert(isNaN(name(NaN)),     "Test 46 failed");
+
+// ADD THREE NEW ASSERTIONS TO TEST SUCCESS CASES AND 3 MORE TO TEST FAILURE CASES
 

@@ -2,73 +2,57 @@
 
 // function()--> possible return values
 
-var cardRankName["Ace",
-			 "One",
-			 "Two",
-			 "Three",
-			 "Four",
-			 "Five",
-			 "Six",
-			 "Seven",
-			 "Eight",
-			 "Nine",
-			 "Ten",
-			 "Jack",
-			 "Queen",
-			 "King"]
+var rankName = [" ",
+				"Ace",
+				"Two",
+				"Three",
+				"Four",
+				"Five",
+				"Six",
+				"Seven",
+				"Eight",
+				"Nine",
+				"Ten",
+				"Jack",
+				"Queen",
+				"King"];
 
-var cardSuitName["Hearts",
-		 		 "Diamonds",
-		 		 "Spades",
-				 "Hearts"]
+var suitName = [" ",
+				"Hearts",
+		 		"Diamonds",
+		 		"Spades",
+				"Clubs"];
 
-function rank(card) { // --> 1..13
-	// if ((card+4) % 4 = 0)
-	// 	var cardRank = 1;
-	// else if (card=1)
-	// 	cardRank = 2;
-	// else if (card=2)
-	// 	cardRank = 3;
-	// else if (card=3)
-	// 	cardRank = 4;
-	// else if (card=4)
-	// 	cardRank = 5;
+function rank(card) {
+	var cardRank = Math.floor((card / 4) +1);
+	return cardRank;
 }
 
-function suit(card) { // --> 1..4
-	if ((card + 4) % 4 == 0) {
-		cardSuit = cardSuitName[0];
-	}
-	else if ((card + 4) % 4 == 1) {
-		cardSuit = cardSuitName[1];
-	}
-	else if ((card + 4) % 4 == 2){
-		cardSuit = cardSuiteName[2];
-	else }
-	}
-	return cardSuit
+function suit(card) {
+	var cardSuit = 1 + (card % 4);
+	return cardSuit;
 }
 
-
-function cardID(rank,suit) { // --> 0..51
-	
+function cardID(rank,suit) {
+	var cardIDNum = 4 * (rank - 1) + (suit - 1);
+	return cardIDNum;
 }
 
-function color(card) { // -->"red","black"
-	var cardColor = black;
-	if (cardSuit == 1 || 2) {
+function color(card) {
+	var cardSuit = suit(card);
+	if (cardSuit < 3) {
 		var cardColor = "red"; 
 	}
-	else if (cardSuit == 3 || 4) {
-		var cardColor = "black";
+	else {
+		cardColor = "black";
 	}
-	return cardColor
+	return cardColor;
 }
 
-function name(card) { // --> string
-	for (card=0; card<=52; card++) {
-		cardRankName+" of "+cardSuit
-	}
+function name(card) {
+	var cardRank = rank(card);
+	var cardSuit = suit(card);
+	return rankName[cardRank]+" of "+suitName[cardSuit]
 }
 
 
