@@ -10,7 +10,7 @@ If you don't remember to start the timer when you begin working, try to estimate
 Be descriptive about which activity you're working on (e.g. in class, office hours, doing homework, reading, etc).
 On next Monday, generate an invoice for the week and turn it in with your homework.
 
-
+**All Set!**
 
 Remember that you should expect to spend 20 hours per week outside of class.  As a general guideline, at least half of that should be spent directly on the homework problems, and another quarter should be background reading and studying.
 
@@ -113,6 +113,7 @@ If you prefer a non-Christmas option, you may choose a different song with simil
 ---
 Answer:
 
+
 var daysofChristmas = ["first",
        "second",
        "third",
@@ -127,25 +128,29 @@ var daysofChristmas = ["first",
        "twelfth"]
 
 var giftsFromMyLove = ["A Partridge in a Pear Tree.\n\n",
-      "Two Turtle Doves'\n'and",
-      "Three French Hens'\n'",
-      "Four Calling Birds'\n'",
-      "Fiiiiiiiiive Goollllllldeeeeen Riiiiiiinnnnngs\n",
-      "Six Geese a Laying\n",
-      "Seven Swans a Swimming'\n'",
-      "Eight Maids a Milking'\n'",
-      "Nine Ladies Dancing\n",
-      "Ten Lords a Leaping",
-      "Eleven Pipers Piping\n",
-      "Twelve Drummers Druming\n"]
+      "Two Turtle Doves, and\n",
+      "Three French Hens,\n",
+      "Four Calling Birds,\n",
+      "Fiiiiiiiiive Goollllllldeeeeen Riiiiiiinnnnngs,\n",
+      "Six Geese a Laying,\n",
+      "Seven Swans a Swimming,\n",
+      "Eight Maids a Milking,\n",
+      "Nine Ladies Dancing,\n",
+      "Ten Lords a Leaping,\n",
+      "Eleven Pipers Piping,\n",
+      "Twelve Drummers Druming,\n"]
 
 function singCarol() {
+  var fullSongLyrics = "";
+  var fullPhraseLyrics = "";
   for (day=0; day<daysofChristmas.length; day++) {
-    console.log("On the "+daysofChristmas[day]+" day of Christmas\nMy true love gave to me:") 
-    for (gift=0; gift<=day; gift++) {
-      console.log(giftsFromMyLove[gift])
-    } 
+    fullPhraseLyrics = "On the "+daysofChristmas[day]+" day of Christmas\nMy true love gave to me:\n";
+    for (gift=day; gift>=0; gift--) {
+      fullPhraseLyrics += (giftsFromMyLove[gift]);
+    }
+    fullSongLyrics += fullPhraseLyrics;
   }
+  return fullSongLyrics;
 }
 
 ---
@@ -215,4 +220,4 @@ In the file with your solution to part **b**, extend the existing test suite: wr
 
 _(Please note: Problem 5 is the most important one in this homework, because variations of it will recur in several later homeworks.  The cleaner your code is now, the easier it will be to modify later.)_
 
-
+**See other files. The functions for item a) are found in stacyFabian_cards.js and the functions for item b) are found in stacyFabian_cards_errorDetection.js.**

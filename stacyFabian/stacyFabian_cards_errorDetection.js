@@ -1,18 +1,51 @@
 // Error-detecting version
 
 function rank(card) {
+	cardRank = Math.floor((card / 4) +1);
+	return cardRank
 }
 
 function suit(card) {
+	if (card >= 0 && <= 51){
+	}
+	// insert full function from other doc
+	else {
+		alert("Enter valid value dork!")
+	}
 }
 
 function cardID(rank,suit) {
+	var cardID = 4 * (rank - 1) + (suit - 1);
+	return cardID
 }
 
 function color(card) {
+	var cardSuit = suit(card);
+	if (cardSuit < 3) {
+		var cardColor = "red"; 
+	}
+	else {
+		cardColor = "black";
+	}
+	return cardColor;
 }
 
 function name(card) {
+	var cardRank = rank(card);
+	var cardSuit = suit(card);
+	var cardName;
+	if (card>=0 && card<52 {
+		cardName = rankName[cardRank]+" of "+suitName[cardSuit]
+	}
+	else alert("Please input a correct value.")
+	}
+return rankName[cardRank]+" of "+suitName[cardSuit]
+}
+
+function name(card) {
+		var cardRank = rank(card);
+		var cardSuit = suit(card);
+		return rankName[cardRank]+" of "+suitName[cardSuit]
 }
 
 

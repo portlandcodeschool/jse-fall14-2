@@ -17,6 +17,11 @@ var cardRankName["Ace",
 			 "Queen",
 			 "King"]
 
+var cardSuitName["Hearts",
+		 		 "Diamonds",
+		 		 "Spades",
+				 "Hearts"]
+
 function rank(card) { // --> 1..13
 	// if ((card+4) % 4 = 0)
 	// 	var cardRank = 1;
@@ -31,25 +36,33 @@ function rank(card) { // --> 1..13
 }
 
 function suit(card) { // --> 1..4
-	if ((card + 4) % 4 = 0)
-		var cardSuit = 1;
-	else if ((card + 4) % 4 = 1)
-		var cardSuit = 2;
-	else if ((card + 4) % 4 = 2)
-		var cardSuit = 3;
-	else if ((card + 4) % 4 = 3)
-		var cardSuit = 4;
+	if ((card + 4) % 4 == 0) {
+		cardSuit = cardSuitName[0];
+	}
+	else if ((card + 4) % 4 == 1) {
+		cardSuit = cardSuitName[1];
+	}
+	else if ((card + 4) % 4 == 2){
+		cardSuit = cardSuiteName[2];
+	else }
+	}
+	return cardSuit
 }
 
+
 function cardID(rank,suit) { // --> 0..51
-	// 
+	
 }
 
 function color(card) { // -->"red","black"
-if (cardSuit = 1 || 2)
-	var cardColor = "red";
-else if (cardSuit = 3 || 4)
-	var cardColor = "black";
+	var cardColor = black;
+	if (cardSuit == 1 || 2) {
+		var cardColor = "red"; 
+	}
+	else if (cardSuit == 3 || 4) {
+		var cardColor = "black";
+	}
+	return cardColor
 }
 
 function name(card) { // --> string
