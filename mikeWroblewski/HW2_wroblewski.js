@@ -260,7 +260,7 @@ function andN(n, values) {
 
   while (n !== 0) {
 
-    if (values[n] == false) {
+    if (values[n] === false) {
 
       return false;
 
@@ -286,7 +286,7 @@ You've just realized that your effort was doomed: neither of your functions can 
 
 values = [3, 5, NaN, 6];
 
-// If NaN or Undefined would be in the array, then the function would return true because we are only able to test whether or not the array contains anything that is false.
+// The && operator will stop once it has run into a flase statment, but we can't replicate this with the andN function above.  In the example array with NaN, the function andN would keep running past NaN and evaluate from there.
 
 ---
 
