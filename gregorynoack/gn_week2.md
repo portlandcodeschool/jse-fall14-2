@@ -14,6 +14,8 @@ Remember that you should expect to spend 20 hours per week outside of class.  As
 
 Each problem below lists, along with its projected difficulty level, an approximate time budget.  The total time estimate for this homework is around 10 hours.
 
+
+
 ---
 
 **1)** _(Easy, 1/2 hr)_
@@ -23,11 +25,56 @@ Revisit your solution to homework #1, problem 4, which expresses an improper fra
 **a)** Write a function `printFraction(n,d)` which takes 2 parameters (n,d) and returns a string.  For example, 
 `printFraction(7,4)` should return "1 3/4".  Assume that _n_ and _d_ are both positive integers.
 
+	//original solution week 1 - not quite right
+	var remain = x/n % 1;
+	var fraction = "1 " + (remain * 100) % (4) + "/" +"4"
+	
+	// change
+	var x = 7;
+	var y = 4;
+	var a = 10;
+	var b = 3;
+	function printFraction(n,d){    
+	  var fraction = "";
+	  var remain = n/d % 1;
+	  var remainRound = Math.floor((remain * 100) % d);
+	  var wholeNum = Math.floor(n/d);   
+	  fraction = wholeNum + " " + remainRound + "/" + d;
+	  fraction = wholeNum + " " + remainRound + "/" + d;
+	  
+	  return fraction;
+	}
+	var fractionOne = printFraction(x,y);
+	var fractionTwo = printFraction(a,b);
+	
+
+
+
 
 **b)** Write a second version of your function which improves the output in two special cases:
 
 - A output string like "0 1/2" should be simplified to just "1/2";
 - A output string like "1 0/3" should be simplified to just "1".
+
+```
+// And
+function ifPrintFraction(n,d){    
+	var fraction = "";
+	var remain = n/d % 1;
+	var remainRound = Math.floor((remain * 100) % d);
+	var wholeNum = Math.floor(n/d);
+	if( wholeNum <= 0  && remainRound > 0){
+		fraction = remainRound + "/" + d;
+	}else if(remainRound <= 0){
+		fraction = wholeNum;
+	}else{
+		fraction = wholeNum + " " + remainRound + "/" + d;
+	}
+	return fraction;
+}
+var fractionOne = ifPrintFraction(x,y);
+var fractionTwo = ifPrintFraction(a,b);
+```
 
 ---
 
@@ -46,7 +93,11 @@ if ((n - Math.floor(n)) >= .5) {
 }
 ```
 
-
+```
+//simplified	
+var n = 0.2;
+var i = n >= 1 ? Math.ceil(n) : Math.floor(n);
+```
 **b)**
 ```
 var y, xIsFalse = (x? false : true);
@@ -55,7 +106,11 @@ if (xIsFalse)
 else
    y = x;
 ```
-
+```
+//simplified	
+var x = true, y, xIsFalse = (x ? false : true);
+y = !xIsFalse;
+```
 
 **c)**
 ```
@@ -64,7 +119,14 @@ for (var count = 15 - i ; count < 15 ; count=count+1) {
     console.log(i+1)
 }
 ```
-
+```
+//simplified
+var i = 10;
+for (var count = 0 - i  ; count < 0 ; count++) {
+	i--;
+	console.log(i+1);
+}
+```
 
 **d)**
 
@@ -84,7 +146,17 @@ if (a) {
   }
 }
 ```
-
+```
+//simplified	
+var x;
+if(a && b) {
+	x = 0;
+} else if(b){
+	x = 1;
+}else {
+	x = 2;
+}
+```
 
 ---
 
@@ -96,6 +168,24 @@ You may want to use functions, loops, and/or arrays to store repeated elements.
 
 If you prefer a non-Christmas option, you may choose a different song with similarly repeating structure, such as "There was an Old Woman Who Swallowed a Fly".
 
+```
+//solution
+var daysOfChristmas = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth', 'eleventh', 'twelfth'];
+var sentItems = ['A Partridge in a Pear Tree', 'Two Turtle Doves', 'Three French Hens', 'Four Calling Birds', 'Five Golden Rings', 'Six Geese a Laying', 'Seven Swans a Swimming', 'Eight Maids a Milking', 'Nine Ladies Dancing', 'Ten Lords a Leaping', 'Eleven Pipers Piping', '12 Drummers Drumming'];
+function twelveDays(){
+	var songResult = "";
+	var receivedItems = "";
+	songResult += 'On the ' + daysOfChristmas[i] + ' day of Christmas\nmy true love sent to me:\n' + sentItems[0];
+	for(var i = 1; i < daysOfChristmas.length; i++){
+		receivedItems += sentItems[i] + '\n' ;
+    	songResult += ' \n\nOn the ' + daysOfChristmas[i] + ' day of Christmas\nmy true love sent to me:\n' + receivedItems + 'and a Partridge in a Pear Tree';
+    }
+    return songResult;
+}
+var song = twelveDays();
+```
+
+
 ---
 
 **4)** _(Difficult, 2.5 hrs)_
@@ -105,7 +195,58 @@ Suppose the '&' key on your keyboard is missing, and you want to be able to cont
 **a)**
 Write a function `and2(a,b)` which tries to simulate the && operator: it should always return the same result as `(a && b)` for any values of _a_ and _b_.  (For example, `and2((0>1),true)` should return _false_.)  But you can't use && itself within your function!
 
+
+```
+var w = false;
+var x = false !== true;
+var y = 1 === 1;
+var z = (10 > 2);
+function andAnd(a,b) {   
+  var check; 
+  if(a == true){
+    if(b == true){
+      check = "true"
+    }else{
+      check = "false"
+    }
+  }
+  return check;
+}
+var test0 = andAnd(w,x);
+var test1 = andAnd(y,z);
+var test2 = andAnd(x,z);
+var test3 = andAnd(y,w);
+```
+
+
+
+
 **b)** Write another function `and3(a,b,c)` which tries to simulate a double-&& operator: it should always return the same result as `(a && b && c)` for any values of a,b,c.  (For example, `and3((1>0),(0>1),true)` should return _false_.)  As before, you're not allowed to use && itself.
+
+```
+var v = !false;
+var w = false;
+var x = false !== true;
+var y = 1 === 1;
+var z = (10 > 2);
+function andAnd(a,b,c) {   
+  var check; 
+  if(a == true){
+    if(b == true){
+       if(b == true){
+        check = "true"
+       }
+     }else{
+      check = "false"
+    }
+  }
+  return check;
+}
+var test3 = andAnd(y,w,v);
+var test0 = andAnd(w,x,y);
+var test1 = andAnd(y,z,w);
+var test2 = andAnd(x,z,v);
+```
 
 **c)**
 Now generalize your function to handle any number of values.  You will learn better ways eventually, but for now use an array to store all the values.
@@ -114,7 +255,25 @@ If your array argument holds values [a,b,c...z], as in
 `andN(26,[a,b,c...z])`, the function should return the same result as `(a && b && c && ... z)`.
 Make sure to handle two special cases: length 0 (then return _true_) and length 1 (then return that single value).
 Again, don't use &&.
-
+```
+var checkVal = [true, true, (10>1), !false, 1 === 1, (100-1) == 99, 100 === 1001]
+var cvLength = checkVal.length;
+function andAnd(n, value){
+  var check = "";
+  var i = 0;
+  for(i; i < n; i++){
+   var testTruthy = (value[i] == true ? true : false);
+    if (testTruthy == true){
+      check = "true";
+    }else{
+      check = "false";
+    }
+  }
+  console.log("this is testT " + testTruthy);
+  return check;
+}
+var test = andAnd(cvLength, checkVal);
+```
 **d)**
 You've just realized that your effort was doomed: neither of your functions can replace the && operator in certain circumstances.  Explain why, and find an example which demonstrates failure.
 
@@ -129,7 +288,7 @@ Imagine that a deck of playing cards is sorted by rank and suit: first all the A
 
 * `rank(id)` returns 1-13, representing the card's rank (for an _id_ between 0-51).
 
-* `suit(id)` returns 1-4, representing the card's suit (1 is Hearts, 4 is Clubs).
+* `suit(id)` returns 1-4, representing the*  card's suit (1 is Hearts, 4 is Clubs).
 
 * `color(id)` returns "red" or "black".
 
@@ -144,7 +303,7 @@ Hint #1: Notice the patterns as the card id ranges from 0 to 51:
 
 - rank(id) increases slowly, like a quotient;
 - suit(id) cycles quickly through 1-4, (almost) like a remainder;
-- color(id) alternates R,B,R,B...
+- color(id) alternates R,B,R,B R,R,B,B,R,R,B,B ... (corrected, sorry!)
 
 Hint #2: Generate your card names by combining a rank word from one array and suit word from another.
 
