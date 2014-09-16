@@ -1,21 +1,50 @@
 // Error-detecting version
-
-function rank(card) {
+function rank(card) { // --> 1..13
+  var cardRank = Math.floor((card/4) + 1);
+  return cardRank;
 }
 
-function suit(card) {
+function suit(card) { // --> 1..4
+	var cardSuit = (card % 4) + 1;
+	return cardSuit;
 }
 
-function cardID(rank,suit) {
+function cardID(rank,suit) { // --> 0..51
+	var cardID = 4 * (rank -1 ) + (suit - 1);
+	var result = '';
+	if(rank && Suit == NaN){
+		result ='error! NaN';
+	}
+	else{
+		result = cardID;
+	}
+	console.log(result);
 }
 
-function color(card) {
+function color(card) { // -->"red","black"
+	var cardSuit = suit(card);
+	if(typeof(card) != 3){
+		result="error! NaN"
+	}
+	else if(cardSuit < 3){
+		var result = 'red';
+	}
+
+	else{
+		result = 'black';
+	}
+	return result;
 }
 
-function name(card) {
+function name(card) { // --> string
+	var cardRank = rank(card);
+	var cardSuit = suit(card);
+	return cardRankArr[cardRank] + ' of ' + cardSuitArr[cardSuit];
 }
 
+var cardRankArr = ['','Ace', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King'];
 
+var cardSuitArr = ['','Hearts','Diamonds', 'Spades', 'Clubs'];
 
 // TESTING:
 function assert(claim,message) {
