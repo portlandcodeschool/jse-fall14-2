@@ -15,6 +15,9 @@ function suit(card) { // --> 1..4
 }
 
 function cardID(rank,suit) { // --> 0..51
+	
+	return ((rank * 4) - 1) + (suit - 1);
+	
 }
 
 function color(card) { // -->"red","black"
