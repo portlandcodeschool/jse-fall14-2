@@ -26,11 +26,15 @@ function suit(card) {
 
 function cardID(rank,suit) {
 	
+	if ((rank >= 1 && rank < 14) && (suit > 0 && suit < 5) && (typeof rank !== "string")) {
+		
+		return ((rank * 4) - 1) + (suit - 1);
+		
+	}
 	
+	return NaN;
 	
 }
-
-console.log(cardID(1, 1));
 
 function color(card) {
 	
