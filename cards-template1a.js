@@ -1,21 +1,36 @@
 // Simple version (no error-detection)
 
 // function()--> possible return values
+var names = ['Ace','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Jack','Queen','King'];
+
+var suits = ['Hearts','Diamonds','Spades','Clubs'];
 
 function rank(card) { // --> 1..13
-}
+	return Math.floor(card/4)+1;
+} /* takes the card id value (0-51), divides by four b/c
+there are four suits. math.floor then rounds down to the nearest
+whole number. always add one because the card ids start with 0
+but the suit ids start with 1 */
 
 function suit(card) { // --> 1..4
-}
+	return (card%4)+1;
+} /* the four suits are cycled through the card id amount. so, 
+the suits can go into 51 a lot of times, with a remainder of 3. 
+then always add one to it in order to get the correct suit. 
+one has to be added because the card ids start with 0 but the
+suit ids start with 1*/ 
 
-function cardID(rank,suit) { // --> 0..51
-}
+function cardID(rank,suit) {
+    return (rank-1)*4 + (suit-1);
+} /* gives each card a value from 0 to 51 which is determined by its rank and suit.*/
 
-function color(card) { // -->"red","black"
-}
+function color(card) { // -->"red,"black"
+    return (suit(card) < 3)? "red": "black"; 
+} /* If the suit is a 1 or 2 value then return red, otherwise return black */ 
 
 function name(card) { // --> string
-}
+	return names[rank(card)] + " of " + suits[suit(card)];
+} /* return the name and suit of the card whose id is called. return it as a string */
 
 
 // TESTING:
