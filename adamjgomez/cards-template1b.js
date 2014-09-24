@@ -22,20 +22,30 @@ var cardSuitArr = [ "",
                   "Spades",
                   "Clubs"]
 
+function isValid(num,low,high) { // Returns--> NaN, true
+    if ((typeof num)!="number") //wrong type
+        return NaN;
+    if (num%1 !== 0) //non-integer
+        return NaN;
+    if (num<low || num>high) //out of range
+        return NaN;
+    return true;
+}
 
 function rank(card) { // --> 1..13
   var cardRank = Math.floor((card / 4) + 1);
-  return cardRank;
+  return isValid(card,0,51) && cardRank;
 }
 
 function suit(card) { // --> 1..4
   var cardSuit = (card % 4) + 1;
-  return cardSuit;
+  return isValid(card,0,51) && cardSuit;
 }
 
 function cardID(rank,suit) { // --> 0..51
-
-  return (rank - 1)*4 + (suit -1);
+  return isValid(rank,1,13) &&
+          isValid(suit,1,4) &&
+          (rank - 1)*4 + (suit -1);
 }
 
 function color(card) { // -->"red","black"
@@ -54,7 +64,6 @@ function name(card) { // --> string
 
   return cardRankArr[cardRank] + ' of ' + cardSuitArr[cardSuit];
 }
-
 
 
 // TESTING:
