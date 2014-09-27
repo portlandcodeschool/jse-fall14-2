@@ -2,7 +2,7 @@
 
 // function()--> possible return values
 
-var rankName = [" ",
+var rankNames = [" ",
 				"Ace",
 				"Two",
 				"Three",
@@ -17,43 +17,57 @@ var rankName = [" ",
 				"Queen",
 				"King"];
 
-var suitName = [" ",
+var suitNames = [" ",
 				"Hearts",
 		 		"Diamonds",
 		 		"Spades",
 				"Clubs"];
 
 function rank(card) {
-	var cardRank = Math.floor((card / 4) +1);
-	return cardRank;
+	return Math.floor(card/4)+1;
 }
+// Same as above but longer:
+// 	var cardRank = Math.floor((card / 4) +1);
+// 	return cardRank;
+// }
 
 function suit(card) {
-	var cardSuit = 1 + (card % 4);
-	return cardSuit;
+	return (card%4)+1;
 }
+// Same as above but longer:
+// 	var cardSuit = (card % 4) + 1;
+// 	return cardSuit;
+// }
 
 function cardID(rank,suit) {
-	var cardIDNum = 4 * (rank - 1) + (suit - 1);
-	return cardIDNum;
+	return (rank - 1)*4 + (suit-1);
 }
+// Same as above but longer:
+// var cardIDNum = (rank - 1) * 4 + (suit - 1);
+// return cardIDNum;
 
 function color(card) {
-	var cardSuit = suit(card);
-	if (cardSuit < 3) {
-		var cardColor = "red"; 
-	}
-	else {
-		cardColor = "black";
-	}
-	return cardColor;
+	return (suit(card) < 3)? "red":"black";
 }
+// Same as above but longer:
+// 	var cardSuit = suit(card);
+// 	if (cardSuit < 3) {
+// 		var cardColor = "red"; 
+// 	}
+// 	else {
+// 		cardColor = "black";
+// 	}
+// 	return cardColor;
+// }
+
 
 function name(card) {
-	var cardRank = rank(card);
-	var cardSuit = suit(card);
-	return rankName[cardRank]+" of "+suitName[cardSuit]
+	return rankNames[rank(card)]+' of '+suitNames[suit(card)];
 }
+// 	var cardRank = rank(card);
+// 	var cardSuit = suit(card);
+// 	return rankNames[cardRank]+" of "+suitNames[cardSuit]
+// }
 
 
 // TESTING:

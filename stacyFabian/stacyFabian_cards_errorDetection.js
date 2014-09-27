@@ -1,6 +1,6 @@
 // Error-detecting version
 
-var rankName = [" ",
+var rankNames = [" ",
 				"Ace",
 				"Two",
 				"Three",
@@ -15,73 +15,52 @@ var rankName = [" ",
 				"Queen",
 				"King"];
 
-var suitName = [" ",
+var suitNames = [" ",
 				"Hearts",
 		 		"Diamonds",
 		 		"Spades",
 				"Clubs"];
 
+function isValid(num,low,high) {
+	if ((typeof num)!="number") // confirms type
+		return NaN;
+	if (num%1 !== 0) // confirms an integer
+		return NaN;
+	if (num<low || num>high) // confirms right number set (0-51 or 1-13)
+		return NaN;
+	return true;
+}
+
+// basically write a function for all the verification and then run that with the other function to confirm it all. This way you don't write the same error detection validity statements in each function.
+
 function rank(card) {
-	var cardRank // require rank output to be a whole, positive number
-	if (card >= 0 && card < 52) {
-		cardRank = Math.floor((card / 4) +1);;
-	}
-	else {
-		cardSuit = NaN;
-	}
-	return cardRank;
+	return isValid(card,0,51) &&
+		Math.floor(card/4)+1;
 }
 
 function suit(card) {
-	var cardSuit // specifiy the only answers possible are 0 - 5 whole positive numbers
-	// and any string or boolean is NaN result
-	if (card >= 0 && card < 52) {
-		cardSuit = 1 + (card %4);
-	}
-	else {
-		cardSuit = NaN;
-	}
-	return cardSuit;
+	return isValid(card,0,51) &&
+		((card%4)+1);
 }
 
 function cardID(rank,suit) {
-	var cardID 
-	// Need to set a parameter that must "rank" and "suit" must be whole, positive numbers >=0 and >52.
-	if (rank,suit >= 0 && rank,suit < 52) {
-		cardID = 4 * (rank - 1) + (suit - 1);
-	}
-	else {
-		alert("Please enter a valid value");
-	}
-	return cardID;
+	return isValid(rank,1,13) &&
+			isValid(suit,1,4) &&
+			((rank-1)*4 + (suit-1));
 }
 
 function color(card) {
-	var cardSuit = suit(card);
-	if (card>= 0 && card < 52) {
-		if (cardSuit < 3) {
-		var cardColor = "red"; 
-		}
-		else {
-			cardColor = "black";
-		}
-		return cardColor;
-	}
+	var cardSuit=suit(card);
+	return cardSuit && ((cardSuit<3)? "red": "black");
 }
 
 function name(card) {
 	var cardRank = rank(card);
 	var cardSuit = suit(card);
-	var cardName;
-	if (card >= 0 && card < 52) { 
-		cardName = rankName[cardRank]+" of "+suitName[cardSuit]
-	}
-	else {
-		cardName = NaN
-	}
-	return rankName[cardRank]+" of "+suitName[cardSuit];
+	return cardRank && cardSuit && (rankNames[cardRank]+' of '+suitNames[cardSuit]);
 }
 
+// Below is all copied from solutions file.
 
 // TESTING:
 function assert(claim,message) {
@@ -104,6 +83,7 @@ assert(name(51)==='King of Clubs',  "Test 13 failed");
 
 // Extra testing!
 // These tests check that invalid arguments produce invalid output.
+// I.e. "garbage in guarantees garbage out".
 assert(isNaN(rank(52)),  "Test 21 failed");
 assert(isNaN(rank("0")), "Test 22 failed");
 assert(isNaN(rank(-1)),  "Test 23 failed");
@@ -124,6 +104,9 @@ assert(isNaN(cardID(-1,-1)), "Test 35 failed");
 assert(isNaN(cardID(0.5,1)), "Test 36 failed");
 assert(isNaN(cardID(1,NaN)), "Test 37 failed");
 
+// My bad: the following test are inadequate!  Since they provide invalid arguments,
+//  they should all return NaN.  But function isNaN(result) will be true if result
+//  is a string.  So these tests fail to ensure that garbage in guarantees garbage out!
 assert(isNaN(color('apple')),"Test 41 failed");
 assert(isNaN(color(true)),   "Test 42 failed");
 assert(isNaN(name(false)),   "Test 43 failed");
@@ -131,5 +114,18 @@ assert(isNaN(name(-1)),      "Test 44 failed");
 assert(isNaN(name(52)),      "Test 45 failed");
 assert(isNaN(name(NaN)),     "Test 46 failed");
 
-// ADD THREE NEW ASSERTIONS TO TEST SUCCESS CASES AND 3 MORE TO TEST FAILURE CASES
+// Part c: more tests!
 
+// Success cases:
+assert(rank(4)===2,      "Test 51 failed");
+assert(color(4)==='red', "Test 52 failed");
+assert(name(4)==='Two of Hearts', "Test 53 failed");
+
+// Failure cases:
+// Fix 41 thru 46 above:
+assert(Number.isNaN(color('apple')),"Test 41b failed");
+assert(Number.isNaN(color(true)),   "Test 42b failed");
+assert(Number.isNaN(name(false)),   "Test 43b failed");
+assert(Number.isNaN(name(-1)),      "Test 44b failed");
+assert(Number.isNaN(name(52)),      "Test 45b failed");
+assert(Number.isNaN(name(NaN)),     "Test 46b failed");
