@@ -31,7 +31,7 @@ function isValid(num,low,high) {
 	return true;
 }
 
-// basically write a function for all the verification and then run that with the other function to confirm it all. This way you don't write the same error detection validity statements in each function.
+// basically write a function for all the verification and then run that with the other functions to confirm it all. This way you don't write the same error detection validity statements in each function.
 
 function rank(card) {
 	return isValid(card,0,51) &&
