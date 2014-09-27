@@ -59,7 +59,14 @@ if ((n - Math.floor(n)) >= .5) {
   i = Math.floor(n);
 }
 ```
+My Adjusted Result
 
+```
+var i = Math.floor(n);
+if ((n - Math.floor(n)) >=.5) {
+  i = Math.ceil(n);
+}
+```
 
 **b)**
 ```
@@ -78,7 +85,13 @@ for (var count = 15 - i ; count < 15 ; count=count+1) {
     console.log(i+1)
 }
 ```
+My Adjusted Answer (NEEDS MORE WORK)
 
+```
+for (var count = 14; count<15; count++) {
+  i--;
+  console.log(i+1)
+}
 
 **d)**
 
@@ -98,7 +111,23 @@ if (a) {
   }
 }
 ```
+My Adjusted Answer
 
+```
+var x;
+if (a) {
+   x = 1;
+   if (b) {
+     x = 0;
+   }
+} else {
+  x = 2;
+  if (b) {
+    x = 1;
+  } 
+}
+
+```
 
 ---
 
@@ -157,6 +186,8 @@ function singCarol() {
 
 **4)** _(Difficult, 2.5 hrs)_
 
+// Use if, then statements to show A && B... if A is true then keep it, if it's false then stop and return "false". If A is true move on to B and if B is false end and return "false" if B is also true, then return they are both true.
+
 Suppose the '&' key on your keyboard is missing, and you want to be able to continue programming without it.
 
 **a)**
@@ -208,7 +239,7 @@ Hint #2: Generate your card names by combining a rank word from one array and su
 Write your code into the [template file](cards-template1a.js).  The template also includes a suite of assertions for testing your code.  When you evaluate the entire template file, the assertions at the end will write messages to the console if your functions fail any test.  Make sure you pass all the tests!
 
 **b)**
-Now abandon the assumption of valid arguments and program defensively!  Rewrite your five functions so that each returns the correct answer when all arguments are valid, but returns NaN if any argument is not an integer in the appropriate range.
+Now abandon the    adsf aassumption of valid arguments and program defensively!  Rewrite your five functions so that each returns the correct answer when all arguments are valid, but returns NaN if any argument is not an integer in the appropriate range.
 
 You may use the provided [template file](cards-template1b.js), which has extra tests checking the results of invalid arguments.
 
