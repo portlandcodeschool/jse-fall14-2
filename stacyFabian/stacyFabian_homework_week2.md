@@ -25,7 +25,7 @@ Revisit your solution to homework #1, problem 4, which expresses an improper fra
 **a)** Write a function `printFraction(n,d)` which takes 2 parameters (n,d) and returns a string.  For example, 
 `printFraction(7,4)` should return "1 3/4".  Assume that _n_ and _d_ are both positive integers.
 
-_Answer_
+_Answer_ (NOT COMPLETE)
 
 var remainder = n % d
 
@@ -238,12 +238,23 @@ Hint #2: Generate your card names by combining a rank word from one array and su
 
 Write your code into the [template file](cards-template1a.js).  The template also includes a suite of assertions for testing your code.  When you evaluate the entire template file, the assertions at the end will write messages to the console if your functions fail any test.  Make sure you pass all the tests!
 
+
+***See file 'stacyFabian_cards.js'***
+
+
+
 **b)**
-Now abandon the    adsf aassumption of valid arguments and program defensively!  Rewrite your five functions so that each returns the correct answer when all arguments are valid, but returns NaN if any argument is not an integer in the appropriate range.
+Now abandon the aassumption of valid arguments and program defensively!  Rewrite your five functions so that each returns the correct answer when all arguments are valid, but returns NaN if any argument is not an integer in the appropriate range.
 
 You may use the provided [template file](cards-template1b.js), which has extra tests checking the results of invalid arguments.
 
 Hint #3: you can test whether an number _n_ is an integer with `(n%1 === 0)`.
+
+
+**See file 'stacyFabian_Cards_errorDetection.js'**
+
+
+
 
 **c)**
 In the file with your solution to part **b**, extend the existing test suite: write 3 new assertions to test success cases and 3 more assertions to test failure cases.
@@ -251,4 +262,4 @@ In the file with your solution to part **b**, extend the existing test suite: wr
 
 _(Please note: Problem 5 is the most important one in this homework, because variations of it will recur in several later homeworks.  The cleaner your code is now, the easier it will be to modify later.)_
 
-**See other files. The functions for item a) are found in stacyFabian_cards.js and the functions for item b) are found in stacyFabian_cards_errorDetection.js.**
+**See fiel 'stacyFabian_cards_errorDetection.js' **

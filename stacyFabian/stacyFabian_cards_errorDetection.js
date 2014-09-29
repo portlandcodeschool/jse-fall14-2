@@ -1,3 +1,4 @@
+// Week 2, Problem 5b
 // Error-detecting version
 
 var rankNames = [" ",
