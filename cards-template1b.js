@@ -1,18 +1,68 @@
 // Error-detecting version
+var names = ['Ace','Two','Three','Four','Five','Six','Seven','Eight','Nine','Ten','Jack','Queen','King'];
+
+var suits = ['Hearts','Diamonds','Spades','Clubs'];
 
 function rank(card) {
+	if { card <0 || >51
+		return NaN
+	} 
+	else if { (n % 1 === 0)
+		return NaN
+	}
+	return Math.floor(card/4)+1;
 }
 
 function suit(card) {
+	if { card <0 || >51
+		return NaN
+	} 
+	else if { (n % 1 === 0)
+		return NaN
+	}
+	else {
+		return (card%4)+1; 
+
+	}
 }
 
 function cardID(rank,suit) {
+	if { card <0 || >51
+		return NaN
+	} 
+	else if { n % 1 === 0
+		return NaN
+	}
+	else {
+		return (rank-1)*4 + (suit-1);
+
+	}
 }
 
 function color(card) {
+	if { card <0 || >51
+		return NaN
+	} 
+	else if { n % 1 === 0
+		return NaN
+	}
+	else {
+		return (suit(card) < 3)? "red": "black"; 
+
+	}
 }
 
 function name(card) {
+	if { card <0 || >51
+		return NaN
+	} 
+	else if { n % 1 === 0
+		return NaN
+	}
+	else {
+		return names[rank(card)] + " of " + suits[suit(card)];
+
+	}
 }
 
 
