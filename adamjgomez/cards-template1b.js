@@ -49,7 +49,7 @@ function cardID(rank,suit) { // --> 0..51
 }
 
 function color(card) { // -->"red","black"
-  var cardSuit = suit(card);
+  var cardSuit = this.suit(card);
   if (cardSuit < 3) {
     var result = "red";
   } else {
